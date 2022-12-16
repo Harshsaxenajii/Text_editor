@@ -26,8 +26,11 @@ export default function Form(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <div style={{ color: props.mode === "dark" ? "white" : "black" }}>
-        <div>
+      <div
+        className="main1"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
+        <div className="main">
           <div className="mb-3">
             <label htmlFor="myBox" className="form-label">
               {props.shortHead}
@@ -58,14 +61,18 @@ export default function Form(props) {
             Trim
           </button>
         </div>
-        <div className="text_summ my-2">
-          <h2>Your text summery</h2>
-          charactor {text.length} and words {text.split(" ").length}
+        <div className="text_summ my-2 main">
+          <h2>Your text summary</h2>
+          character {text.length} and words {text.split(" ").length}
           <div>
-            time to read the para is {text.split(" ").length * 0.008} minuts{" "}
+            time to read the para is {text.split(" ").length * 0.008} minutes{" "}
           </div>
           <h2>Preview</h2>
-          <p>{text.length>0?text:"Enter something in text box to preview it"}</p>
+          <p>
+            {text.length > 0
+              ? text
+              : "Enter something in text box to preview it"}
+          </p>
         </div>
       </div>
     </>

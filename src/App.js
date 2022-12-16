@@ -2,6 +2,13 @@ import "./App.css";
 import Form from "./components/Form";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import { useState } from "react";
 
 function App() {
@@ -16,19 +23,27 @@ function App() {
     }
   };
   return (
-    <>
-      {/*this is use of props 
+      <>
+        {/*this is use of props 
     props are the those variables which is change page to page or the any event which is pass through the any event
     */}
-      {/* <Navbar mainHead="HarshCode"/> */}
+        {/* <Navbar mainHead="HarshCode"/> */}
 
-      <Navbar mainHead="TextEditor" mode={mode} toggleMode={toggleMode} />
+        <Navbar mainHead="TextEditor" mode={mode} toggleMode={toggleMode} />
+        {/* <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
 
-      <div className="container">
-        <Form shortHead="Please Enter The Text" mode={mode} />
-      </div>
+          <Route path="/">
+            <div className="container">
 
-      {/* <div className="container my-3">
+            </div>
+          </Route>
+        </Switch> */}
+
+              <Form shortHead="Please Enter The Text" mode={mode} />
+        {/* <div className="container my-3">
         <About />
       </div> */}
     </>
